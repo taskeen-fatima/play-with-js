@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #tbl{
+            border: 5px solid red;
+            padding: 5px;
+            margin: 20px;
+            font-size: 24px;
+            text-align: left;
+            color: #333;
+            margin-bottom: 16px;
+            width: 50%;
+        }
+        thead {
+            background-color: #333;
+            color: white;
+            height: 20px
+        }
+        tbody tr:nth-child(even) {
+            background-color: #eee;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <table id="tbl">
+        <thead>
+            <td>Name</td>
+            <td>Number</td>
+            <td>City</td>
+        </thead>
+        <tbody id="tblBody"></tbody>
+
+    </table>
+</body>
+
+<script>
+    var objs = JSON.parse(localStorage.getItem("Data")) || [];
+    //console.log(objs);
+    objs.map(function(value,index,array)
+    {
+            var row = document.createElement("tr");
+            var col1 = document.createElement("td");
+            col1.innerText = value.name;
+            var col2 = document.createElement("td");
+            col2.innerText = value.number
+            var col3 = document.createElement("td");
+            col3.innerText = value.city;
+            row.append(col1,col2,col3);
+            document.querySelector("#tblBody").append(row);
+    });
+
+</script>
+</html>

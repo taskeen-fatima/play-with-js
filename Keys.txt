@@ -1,0 +1,4 @@
+reques.in
+fakestore API 
+embed google map
+omdapi.com

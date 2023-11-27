@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+h1{
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+    font-style: normal;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+p{
+    text-align: center;
+    color: rgb(184, 184, 184);
+}
+
+
+#grid{
+    margin-top: 55px;
+    display: grid;
+    gap: 30px;
+    grid-template-columns: 300px 300px 300px ;
+    grid-template-rows: 350px;
+    justify-content: center;
+}
+
+#grid>div{
+    
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+#header{
+    width: 600px;
+    margin: 0 auto;
+}
+
+#card>h1{
+    font-size: 25px;
+}
+
+#card>h2{
+    font-size: 25px;
+    text-align: center;
+}
+#card>h3{
+    font-size: 12px;
+    color: grey;
+    text-align: center;
+}
+#button1{
+     cursor: pointer;
+
+}
+#button1:hover{
+    background-color: rgb(5, 5, 5);
+    color: #ebe5e5;
+}
+#btnDiv{
+    display: flex;
+    justify-content: center;
+}
+
+</style>
+<body>
+    <div id="header">
+  <h1>Choose a plan that right for your business</h1>  
+  <p id="p1">We collect reviews from our users so you can get an honest opinion of what an experience with our website are really like!</p>
+</div>
+  <div id="grid">
+    <div id="card">
+        <h1>Starter Plan</h1>
+        <h2>Free</h2>
+        <h3>Per month</h3>
+        <p>We collect reviews from our users so you can get an honest opinion of what an experience with our website.</p>
+        <div id="btnDiv">
+        <button id="button1">Start Now</button>
+    </div>
+    </div>
+    <div></div>
+    <div></div>
+</div>
+
+</body>
+
+</html>

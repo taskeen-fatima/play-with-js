@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<lang="en">
+<link>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./smscss.css">
+</head>
+
+<body>
+    <div class="form__group field">
+        <input type="input" class="form__field" placeholder="Full Name" name="name" id='name' />
+        <label for="name" class="form__label">Name</label>
+      </div> 
+
+      <div class="form__group field">
+        <input type="input" class="form__field" placeholder="Mobile Number" name="number" id='number' />
+        <label for="number" class="form__label">Mobile Number</label>
+      </div>
+
+      <div class="form__group field">
+        <input type="input" class="form__field" placeholder="City" name="city" id='city' />
+        <label for="city" class="form__label">City</label>
+      </div>
+
+      <button class="button-27" id = "btn" role="button">Submit</button>
+</body>
+<script>
+    var objs = JSON.parse(localStorage.getItem("Data")) || [];
+     function getStudentInfo()
+    {
+        //console.log("Working...");
+
+        var name = document.getElementById("name").value;
+        var number = document.getElementById("number").value;
+        var city = document.getElementById("city").value;
+
+        var student = new createObj(name,number,city);
+        //console.log(student.city);
+        objs.push(student);
+        localStorage.setItem("Data",JSON.stringify(objs));
+        var data =  JSON.parse(localStorage.getItem("Data"));
+        console.log(data); 
+    }
+
+    function createObj(name,num,city)
+    {
+        this.name = name;
+        this.number = num;
+        this.city= city
+    }
+    var btn = document.getElementById("btn");
+    btn.addEventListener("click",getStudentInfo);
+    console.log(objs);
+    
+</script>
+</html>
+

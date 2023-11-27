@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    #btn{
+        background-color: #EA4C89;
+        border-radius: 8px;
+        border-style: none;
+        box-sizing: border-box;
+        color: #FFFFFF;
+        cursor: pointer;
+        display: inline-block;
+        font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 14px;
+        font-weight: 500;
+        height: 40px;
+        line-height: 20px;
+        list-style: none;
+        margin: 0;
+        outline: none;
+        padding: 10px 16px;
+        position: relative;
+        text-align: center;
+        text-decoration: none;
+        transition: color 100ms;
+        vertical-align: baseline;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+        visibility:visible;
+  
+    }
+
+    #btn:hover,
+    #btn:focus 
+            {
+                background-color: #F082AC;
+            }
+
+    #container{
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            margin-top: 150px;
+        }
+    #box{
+        height: 300px;
+        width: 700px;
+        border: #EA4C89;
+        border-style: double;
+        border-width: 2px;
+        display: flex;
+        margin: 0 auto;
+        gap: 20px;
+       justify-content:center;
+        align-items: center;
+    }
+.Member{
+    height: 150px;
+    width: 150px;
+    border:2px solid goldenrod;
+    margin: 20px;
+    
+}
+#para
+{
+    font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 30px;
+    font-weight: 600;
+    text-align: center;
+    color: #EA4C89;
+}
+
+img{
+    height: 150px;
+    width: 150px;
+    object-fit: contain;
+}
+</style>
+
+<body>
+    <div id="container">
+        <button id="btn" role="button" >Roll the dice!</button>
+    </div> 
+
+</body>
+
+<script>
+    var btn = document.getElementById("btn");
+    btn.onclick= function(){
+        btn.style.visibility="hidden";
+        var div = document.createElement("div");
+        div.setAttribute("id","box");
+        var para = document.createElement("p"); 
+        para.setAttribute("id","para");
+        para.textContent="The Winner is:"
+        document.querySelector("body").append(para, div);
+
+        var box1 = document.createElement("div");
+        var box2 = document.createElement("div");
+        var box3 = document.createElement("div");
+        box1.setAttribute("class","Member");
+        box2.setAttribute("class","Member");
+        box3.setAttribute("class","Member");
+        div.append(box1,box2,box3);
+        var randomNo1 = Math.floor(Math.random()*6)+1;
+        var r1 = randomNo1.toString();
+
+        var imgObj =
+           {
+                1: 'https://www.pngkey.com/png/detail/393-3932920_dice-clipart-dice-side-dice-with-1.png',
+                2: 'https://clipartmag.com/images/dice-1-clipart-30.png',
+                3: 'https://webstockreview.net/images/dice-clipart-three.png',
+                4: 'https://cliparting.com/wp-content/uploads/2017/02/Dice-side-clipart-kid-2.png',
+                5: 'https://webstockreview.net/images/dice-clipart-five.jpg',
+                6: 'https://cdn2.iconfinder.com/data/icons/dice-roll/100/dice_6-512.png'
+           };
+            var img1 = document.createElement("img");
+            img1.setAttribute("src", imgObj[r1]);
+            box1.append(img1);
+
+            var randomNo2 = Math.floor(Math.random()*6)+1;
+            r2 = randomNo2.toString();
+            var img2 = document.createElement("img");
+            img2.setAttribute("src", imgObj[r2]);
+            box2.append(img2);
+
+            randomNo3 = Math.floor(Math.random()*6)+1;
+            r3 = randomNo3.toString();
+            var img3 = document.createElement("img");
+            img3.setAttribute("src", imgObj[r3]);
+            box3.append(img3);
+
+            var max = Math.max(randomNo1,randomNo2, randomNo3);
+            para.append(max);
+    
+            
+
+        
+    };
+
+</script>
+</html>
